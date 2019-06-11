@@ -1,0 +1,94 @@
+
+body{
+  background: url("memoryGameBackground2.jpg");
+}
+.watch{
+  margin: 10px,10px, 10px , 50px ,  ;
+  color: hsla(119, 86%, 1%, 0.94) ;
+  font-weight: bold;
+}
+#time{
+  background: hsla(360, 99%, 100%, 1) ;
+  background: url("memoryGameBackground2.jpg");
+}
+
+section {
+ margin-left:  20px ;
+ position: relative;
+}
+
+div{
+  height: 100px ;
+  width: 100px ;
+  /* background-color: #008000 ;*/
+  border: 1px solid black ;
+  /*border-radius: 50% ;*/
+
+}
+
+div .container{
+  position: relative;
+  text-align: center;
+  font-size: 10px ;
+  line-height: 100px ;
+  right: 10px ;
+  background-color: #008000 ;
+  margin-left:  10px ;
+  transition: transform 0.8s ;
+ transform-style: preserve-3d;   /*without this, the "front" wont be seen, while making the back position absolute*/
+
+  bottom: 0px ;
+}
+
+/*add Pseudo-class to show that tiles are clickable*/
+div:hover .container{
+    background-color: hsla(143, 100%, 50%, 1);
+   /*transform:  rotateY(-180deg);*/
+
+
+ }
+
+.front{
+  background: yellow ;
+  transform: rotateY(180deg); /*  to make the front rotate slower than the back, you reduce the number of turns
+                                  Also it shows the overlap without the "preserve-3d",
+                                  it determines if the element should be seen or not*/
+}
+
+
+/*.front2{
+  background: yellow ;
+  transform: translateZ(200px);
+  transform: rotateY(0.5turn);  to make the front rotate slower than the back, you reduce the number of turns
+                                  Also it shows the overlap without the "preserve-3d"
+}*/
+
+.back{
+  position: absolute;
+  bottom: -1px ;
+transform: rotateY(180deg);
+}
+
+.vertical1 {
+position: absolute;
+ bottom: 0px ;
+  left: 102px ;
+}
+
+.vertical2 {
+  position: absolute ;
+  bottom: 0px;
+ left: 204px ;
+}
+
+.vertical3 {
+  position: absolute ;
+  bottom: 0px;
+ left: 306px ;
+}
+
+.vertical4 {
+  position: absolute ;
+  bottom: 0px;
+ left: 408px ;
+}
