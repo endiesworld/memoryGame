@@ -1,6 +1,6 @@
 
 body{
-  background: url("images/memoryGameBackground2.jpg");
+  background: url("memoryGameBackground2.jpg");
 }
 .watch{
   margin: 10px,10px, 10px , 50px ,  ;
@@ -9,7 +9,7 @@ body{
 }
 #time{
   background: hsla(360, 99%, 100%, 1) ;
-  background: url("images/memoryGameBackground2.jpg");
+  background: url("memoryGameBackground2.jpg");
 }
 
 section {
@@ -20,7 +20,10 @@ section {
 div{
   height: 100px ;
   width: 100px ;
+  /* background-color: #008000 ;*/
   border: 1px solid black ;
+  /*border-radius: 50% ;*/
+
 }
 
 div .container{
