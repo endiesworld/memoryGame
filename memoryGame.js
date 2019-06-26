@@ -29,6 +29,7 @@ window.onload = function (){
   timming = setInterval(increaseTime , 1000);
 }
 
+// Timer code updated
   var increaseTime = () => {
      time++ ;
      sec = time % 60 ;
@@ -36,7 +37,7 @@ window.onload = function (){
      hour = Math.floor(min / 60) ;
     writeTime() ;
  }
-
+// Also did some update using string Interpolation
 var writeTime = () => {
 let sec2 = sec.toString();
 let min2 = min.toString();
@@ -197,7 +198,7 @@ function loadImage() {
    for (let x = 0 ; x < 20 ; x++)
       parent[boxPosition[x]].style.backgroundImage =   imageArray[multiplyImage[x]] ;
     }
-
+// Random number generator without repetation
   function randomWithNoRepete(size){
     let numberHolder = [] ;
     let  numberGenerated ;
