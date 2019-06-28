@@ -4,7 +4,8 @@ window.onload = function (){
   for(let x = 0 ; x< box.length ; x++){
   box[x].addEventListener("click", processClick) ;
   }
-
+  let playerName = "palyer"
+  let playerTime = 0 ;
   let imageArray = [] ;
   let imageValue = [] ;
   let documentNode = [] ;
@@ -14,15 +15,19 @@ window.onload = function (){
   loadImage() ;
   let trial = 0 ;
   let showTime = document.getElementById("time") ;
-  let sec = 0 ;
-  let min = 0 ;
-  let hour = 0 ;
   let timming ;
   let time = 0 ;
-  let numberOfClicks = 0 ;
+  let numberOfWins = 0 ;
+  const player = {name: playerName, bestTime: playerTime } ;
+
   var timerStop = () => {
   initializeTimer() ;
   clearInterval(timming) ;
+}
+
+var updatePlayer = ()=> {
+  if (time < player.bestTime)
+    palyer.bestTime = time ;
 }
 
  var timerStart = () => {
@@ -32,23 +37,25 @@ window.onload = function (){
 // Timer code updated
   var increaseTime = () => {
      time++ ;
-     sec = time % 60 ;
-     min = Math.floor(time / 60) ;
-     hour = Math.floor(min / 60) ;
-    writeTime() ;
+      writeTime() ;
  }
 // Also did some update using string Interpolation
 var writeTime = () => {
-let sec2 = sec.toString();
-let min2 = min.toString();
-let hour2 = hour.toString();
-if (sec2.length === 1)
-      sec2 =  `0${sec2}` ;
-if (min2.length === 1)
-      min2 =  `0${min2}` ;
-if (hour2.length === 1)
-      hour2 =  `0${hour2}` ;
-showTime.innerHTML = `${hour2}:${min2}:${sec2}`;
+  let timeToFormat = time
+showTime.innerHTML = formatedTime(timeToFormat);
+}
+
+var formatedTime = (toFormat) => {
+  let sec2 = (toFormat % 60).toString();
+  let min2 = (Math.floor(time / 60)).toString();
+  let hour2 =(Math.floor(time / 3600)).toString();
+  if (sec2.length === 1)
+        sec2 =  `0${sec2}` ;
+  if (min2.length === 1)
+        min2 =  `0${min2}` ;
+  if (hour2.length === 1)
+        hour2 =  `0${hour2}` ;
+  return  `${hour2}:${min2}:${sec2}`;
 }
 
   var initializeTimer = () => {
@@ -62,6 +69,8 @@ showTime.innerHTML = `${hour2}:${min2}:${sec2}`;
   trial++ ;
   firstClickCheck() ;
   rotateTile() ;
+  if (numberOfWins === 9)
+    timerStop() ;
   gameState.proceed =  storeDocument() ;
   if (gameState.proceed){
   extractImageValue() ;
@@ -136,8 +145,11 @@ var storeImageValue = (value ) => {
 }
 
 var compareImage = ()=>{
-  if (imageValue[0] == imageValue[1])
+  let stopTimer = false ;
+  if (imageValue[0] == imageValue[1]){
     storeNode() ;
+     numberOfWins++ ;
+  }
   else
     closeImage() ;
 }
