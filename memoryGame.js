@@ -1,28 +1,48 @@
 window.onload = function (){
-  let firstClick = false ;
+
   let box = document.querySelectorAll(".container");
   for(let x = 0 ; x< box.length ; x++){
   box[x].addEventListener("click", processClick) ;
   }
+<<<<<<< HEAD
   let playerName = "palyer"
   let playerTime = 0 ;
+=======
+  
+  let palyerStat = document.getElementById("userInfo") ;
+  let playerName = "palyer"
+  let playerTime = 1000;
+>>>>>>> dfac6bb889c6d6b1575903721aafa13b10f0f3ce
   let imageArray = [] ;
   let imageValue = [] ;
   let documentNode = [] ;
   let openedNode = [] ;
-  const gameState = {proceed: "false" , treat: "true" , angle: 180  } ;
-  generateImage() ;
-  loadImage() ;
+  const gameState = {proceed: "false" , treat: "true" , angle: 180 , firstClick: false  } ;
   let trial = 0 ;
   let showTime = document.getElementById("time") ;
   let timming ;
+<<<<<<< HEAD
   let time = 0 ;
   let numberOfWins = 0 ;
   const player = {name: playerName, bestTime: playerTime } ;
+=======
+  let time = playerTime ;
+  let numberOfWins = 0 ;
+  const player = {name: playerName, bestTime: playerTime } ;
+  updatePlayer() ;
+  generateImage() ;
+  loadImage() ;
+>>>>>>> dfac6bb889c6d6b1575903721aafa13b10f0f3ce
 
   var timerStop = () => {
-  initializeTimer() ;
   clearInterval(timming) ;
+  updatePlayer() ;
+  }
+
+function updatePlayer() {
+  if (time < playerTime)
+        player.bestTime = time ;
+  palyerStat.innerHTML = player.name + " best time: " + formatedTime(player.bestTime) ;
 }
 
 var updatePlayer = ()=> {
@@ -37,12 +57,17 @@ var updatePlayer = ()=> {
 // Timer code updated
   var increaseTime = () => {
      time++ ;
+<<<<<<< HEAD
       writeTime() ;
+=======
+     writeTime() ;
+>>>>>>> dfac6bb889c6d6b1575903721aafa13b10f0f3ce
  }
 // Also did some update using string Interpolation
 var writeTime = () => {
   let timeToFormat = time
 showTime.innerHTML = formatedTime(timeToFormat);
+<<<<<<< HEAD
 }
 
 var formatedTime = (toFormat) => {
@@ -56,21 +81,36 @@ var formatedTime = (toFormat) => {
   if (hour2.length === 1)
         hour2 =  `0${hour2}` ;
   return  `${hour2}:${min2}:${sec2}`;
+=======
+>>>>>>> dfac6bb889c6d6b1575903721aafa13b10f0f3ce
 }
 
-  var initializeTimer = () => {
-   sec = 0 ;
-   min = 0 ;
-   hour = 0 ;
+function formatedTime(toFormat) {
+  let sec2 = (toFormat % 60).toString();
+  let min2 = (Math.floor(toFormat / 60)).toString();
+  let hour2 =(Math.floor(toFormat / 3600)).toString();
+  if (sec2.length === 1)
+        sec2 =  `0${sec2}` ;
+  if (min2.length === 1)
+        min2 =  `0${min2}` ;
+  if (hour2.length === 1)
+        hour2 =  `0${hour2}` ;
+  return  `${hour2}:${min2}:${sec2}`;
 }
 
  function processClick(){
-  if (gameState.treat){
+   let y ;
+   y = event.target.id;
+  if (gameState.treat && y != "stop"){
   trial++ ;
   firstClickCheck() ;
   rotateTile() ;
   if (numberOfWins === 9)
+<<<<<<< HEAD
     timerStop() ;
+=======
+      timerStop() ;
+>>>>>>> dfac6bb889c6d6b1575903721aafa13b10f0f3ce
   gameState.proceed =  storeDocument() ;
   if (gameState.proceed){
   extractImageValue() ;
@@ -84,9 +124,10 @@ var rotateTile = () => {
 }
 
 var firstClickCheck = () =>{
-   if(firstClick == false){
+     if(gameState.firstClick == false){
+     time = 0 ;
      timerStart() ;
-     firstClick = true ;
+     gameState.firstClick = true ;
    }
 }
 
@@ -108,7 +149,7 @@ var firstClickCheck = () =>{
      documentNode[1] = node ;
      toProceed = true ;
          }
-   else if ( internalControl && trial === 3 && ( documentNode[1] != node ) && ( documentNode[0] != node ) ){
+   else if ( internalControl && trial === 3 && ( documentNode[1] != node ) && ( documentNode[0] != node )){
       documentNode[2] = node ;
        toProceed = true ;
        gameState.treat = false ;
@@ -145,10 +186,16 @@ var storeImageValue = (value ) => {
 }
 
 var compareImage = ()=>{
+<<<<<<< HEAD
   let stopTimer = false ;
   if (imageValue[0] == imageValue[1]){
     storeNode() ;
      numberOfWins++ ;
+=======
+  if (imageValue[0] == imageValue[1]){
+    storeNode() ;
+    numberOfWins++ ;
+>>>>>>> dfac6bb889c6d6b1575903721aafa13b10f0f3ce
   }
   else
     closeImage() ;

@@ -1,91 +1,59 @@
 
 body{
-  background: url("images/memoryGameBackground2.jpg");
+  background: url("images/blackTheme.JPG");
 }
 .watch{
   margin: 10px,10px, 10px , 50px ,  ;
-  color: hsla(119, 86%, 1%, 0.94) ;
+  color: hsla(286, 77%, 56%, 1) ;
   font-weight: bold;
 }
 #time{
   background: hsla(360, 99%, 100%, 1) ;
-  background: url("images/memoryGameBackground2.jpg");
+  background: url("images/blackTheme.JPG");
+}
+#userInfo{
+  margin: 10px,10px, 10px , 50px ,  ;
+  color: hsla(286, 77%, 56%, 1) ;
+  font-weight: bold;
 }
 
-section {
- margin-left:  20px ;
- position: relative;
+.container{
+  display: grid;
+  grid-gap: 3px ;
+  grid-template: repeat(4, 100px) /repeat(5, 100px) ;
+  margin-left: 120px;
 }
 
-div{
-  height: 100px ;
-  width: 100px ;
-  border: 1px solid black ;
-}
-
-div .container{
-  position: relative;
-  text-align: center;
-  font-size: 10px ;
-  line-height: 100px ;
-  right: 10px ;
-  background-color: #008000 ;
-  margin-left:  10px ;
-  transition: transform 0.8s ;
- transform-style: preserve-3d;   /*without this, the "front" wont be seen, while making the back position absolute*/
-
-  bottom: 0px ;
-}
+ .subContainer{
+   display: grid;
+   height: 100px ;
+   width: 100px ;
+   background-color: #008000 ;
+   transition: transform 0.8s ;
+   transform-style: preserve-3d;
+   }
 
 /*add Pseudo-class to show that tiles are clickable*/
-div:hover .container{
+.subContainer:hover  {
     background-color: hsla(143, 100%, 50%, 1);
-   /*transform:  rotateY(-180deg);*/
-
-
  }
 
 .front{
-  background: yellow ;
-  transform: rotateY(180deg); /*  to make the front rotate slower than the back, you reduce the number of turns
-                                  Also it shows the overlap without the "preserve-3d",
-                                  it determines if the element should be seen or not*/
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  height: 100px ;
+  width: 100px ;
+  transform: rotateY(180deg);
 }
-
-
-/*.front2{
-  background: yellow ;
-  transform: translateZ(200px);
-  transform: rotateY(0.5turn);  to make the front rotate slower than the back, you reduce the number of turns
-                                  Also it shows the overlap without the "preserve-3d"
-}*/
 
 .back{
-  position: absolute;
-  bottom: -1px ;
-transform: rotateY(180deg);
-}
-
-.vertical1 {
-position: absolute;
- bottom: 0px ;
-  left: 102px ;
-}
-
-.vertical2 {
-  position: absolute ;
-  bottom: 0px;
- left: 204px ;
-}
-
-.vertical3 {
-  position: absolute ;
-  bottom: 0px;
- left: 306px ;
-}
-
-.vertical4 {
-  position: absolute ;
-  bottom: 0px;
- left: 408px ;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  transform: rotateY(180deg);
+  height: 100px ;
+  width: 100px ;
 }
