@@ -9,16 +9,42 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+     .row2{
+       min-height: 100vh ;
+     }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-sm bg-secondary navbar-dark">
       <div class="container">
-         <p>Guest </p>
+         <p class="navbar-brand">Guest </p>
+         <p class="navbar-brand">Study </p>
+         <p class="navbar-brand">Play Game </p>
+         <p class="navbar-brand">View photos</p>
+         <p class="navbar-brand">About </p>
+         <p class="navbar-brand">Contact </p>
       </div>
     </nav>
     <div class="container">
-       <h3 class= "col-md-12 text-center">Welcome to emmanuel okoro's home page.</h3>
-       <h4 class=" text-center"> Please sign in.</h4>
+      <div class="row d-flex row2 justify-content-center align-items-center">
+        <div class="col ">
+          <h3 class= " text-center text-primary ">Welcome to <code class="text-primary  font-italic">Emmanuel Okoro's</code> home page.</h3>
+          <h4 class=" text-center"> Please sign in below.</h4>
+          <div class=" align-self-center">
+            <form  class="d-flex justify-content-center flex-sm-column align-items-center col " action="/action_page.php" target="_blank">
+              <div class="form-group row">
+                <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="endiesworld@yahoo.com" type="email" name="email" >
+              </div>
+              <div class="form-group row">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
