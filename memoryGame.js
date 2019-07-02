@@ -181,19 +181,8 @@ gameState.treat = true ;
 }
 
 function generateImage() {
- let name = [] ;
- name[0] = "url('images/austin.jpg')" ;
- name[1] = "url('images/amara.jpg')" ;
- name[2] = "url('images/brown.jpg')" ;
- name[3] = "url('images/chi.jpg')" ;
- name[4] = "url('images/chizzy.jpg')" ;
- name[5] = "url('images/dubem.jpg')" ;
- name[6] = "url('images/fav.jpg')" ;
- name[7] = "url('images/parents.JPG')" ;
- name[8] = "url('images/parents2.jpg')" ;
- name[9]  = "url('images/ugo.jpg')" ;
-for(x in name)
-  imageArray.push(name[x]);
+  imageArray = ["url('images/austin.jpg')","url('images/amara.jpg')", "url('images/brown.jpg')", "url('images/chi.jpg')" , "url('images/chizzy.jpg')" ,
+                 "url('images/dubem.jpg')", "url('images/fav.jpg')","url('images/parents.JPG')" ,"url('images/parents2.jpg')","url('images/ugo.jpg')" ] ;
 }
 
 function loadImage() {
