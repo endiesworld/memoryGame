@@ -1,0 +1,27 @@
+.testClass{
+  /*width: 0px;*/
+  height: 0px;
+  position: absolute;
+  visibility: hidden;
+  overflow-y: scroll;
+   /* For Safari 3.1 to 6.0 */
+
+   transition: visibility 0s ease-in-out, height 150ms ease-in-out;
+  /*transition-duration:  5s;
+  transition-property: display ;
+  transition-timing-function: Out · Quadratic;
+  animation-name: example;
+  animation-duration: 2s;*/
+}
+.parentContainer{
+  position: relative;
+
+}
+@keyframes example {
+  from {visibility: hidden;}
+  to {visibility: visible;}
+}
+@keyframes example {
+  from {visibility: visible;}
+  to  {visibility: hidden;}
+}

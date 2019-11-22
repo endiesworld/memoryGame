@@ -1,76 +1,152 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="memoryGame.css">
-    <script src="memoryGame.js" charset="utf-8"></script>
-    <title>Memory Game</title>
-  </head>
-  <body>
-  <p class="watch"> Time: <time id="time"></time ></p>
-  <p id="userInfo" ></p>
-  <div id="stop" class="container">
-   <div id="parentOne" class="subContainer">
-     <div id= "front1" class="front"></div> <div id = "one1" class="back"></div>
-   </div>
-   <div id="parentTwo" class="subContainer">
-     <div id= "front2" class="front"></div> <div id = "one2" class="back"></div>
-   </div>
-   <div id="parentThree" class="subContainer">
-     <div id= "front3" class="front"></div> <div id = "one3" class="back"></div>
-   </div>
-   <div id="parentFour" class="subContainer">
-     <div id= "front4" class="front"></div> <div id = "one4" class="back"></div>
-   </div>
-   <div id="parentFive" class="subContainer">
-     <div id= "front5" class="front"></div> <div id = "one5" class="back"></div>
-   </div>
-   <div id="parentSix" class="subContainer">
-     <div id= "front6" class="front"></div> <div id = "one6" class="back"></div>
-   </div>
-   <div id="parentSeven" class="subContainer">
-     <div id= "front7" class="front"></div> <div id = "one7" class="back"></div>
-   </div>
-   <div id="parentEight" class="subContainer">
-     <div id= "front8" class="front"></div> <div id = "one8" class="back"></div>
-   </div>
-   <div id="parentNine" class="subContainer">
-     <div id= "front9" class="front"></div> <div id = "one9" class="back"></div>
-   </div>
-   <div id="parentTen" class="subContainer">
-     <div id= "front10" class="front"></div> <div id = "one10" class="back"></div>
-   </div>
-   <div id="parentEleven" class="subContainer">
-     <div id= "front11" class="front"></div> <div id = "one11" class="back"></div>
-   </div>
-   <div id="parentTwelve" class="subContainer">
-     <div id= "front12" class="front"></div> <div id = "one12" class="back"></div>
-   </div>
-   <div id="parentThirteen" class="subContainer">
-     <div id= "front13" class="front"></div> <div id = "one13" class="back"></div>
-   </div>
-   <div id="parentFourteen" class="subContainer">
-     <div id= "front14" class="front"></div> <div id = "one14" class="back"></div>
-   </div>
-   <div id="parentFifteen" class="subContainer">
-     <div id= "front15" class="front"></div> <div id = "one15" class="back"></div>
-   </div>
-   <div id="parentSixteen" class="subContainer">
-     <div id= "front16" class="front"></div> <div id = "one16" class="back"></div>
-   </div>
-   <div id="parentSeventeen" class="subContainer">
-     <div id= "front17" class="front"></div> <div id = "one17" class="back"></div>
-   </div>
-   <div id="parentEighteen" class="subContainer">
-     <div id= "front18" class="front"></div> <div id = "one18" class="back"></div>
-   </div>
-   <div id="parentNinteen" class="subContainer">
-     <div id= "front19" class="front"></div> <div id = "one19" class="back"></div>
-   </div>
-   <div id="parentTwenty" class="subContainer">
-     <div id= "front20" class="front"></div> <div id = "one20" class="back"></div>
-   </div>
-</div>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js" charset="utf-8"></script>
+    <title>Emmanuel Okoro</title>
+
+  </head>
+  <body class= "bg-secondary " id="body">
+    <div class="navwidth bg-white textColour" id="writeHere"> </div>
+    <div class="pl-2 d-flex justify-content-between setBgColor navwidth sticky-top " id="navbarElement">
+      <div class=" bg-secondary ">
+        <button type="button" class="btn text-center dropdown-toggle text-white" data-toggle="modal" data-target="#skills">
+          Skill Set
+        </button>
+      </div>
+      <div id="navResponsive" class=" collapse row container show ">
+        <div class="col-2 mx-auto text-center ">
+            <button type="button" class="btn js-scroll-trigger  text-white" href="#">Projects </button>
+        </div>
+        <div class="col-2 mx-auto text-center">
+          <button type="button" class="btn  js-scroll-trigger  text-white" href="#">Articles</button>
+        </div>
+        <div class="col-2 mx-auto text-center">
+          <button type="button" class="btn js-scroll-trigger  text-white" href="index.html">Games</button>
+        </div>
+        <div class="col-2 mx-auto text-center">
+          <button type="button" class="btn  js-scroll-trigger  text-white" href="#">Gallery</button>
+        </div>
+      </div>
+      <div class="navbar-dark pr-2">
+        <button type="button" class="btn d-block navbar-toggler " data-toggle="collapse" data-target="#navResponsive" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div id="skills" class="modal">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <!-- Modal header
+          <div class="modal-header">
+            No header element.
+          </div>
+          -->
+          <!-- Modal body -->
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <div class=" row">
+              <div class=" col-4 ">
+                <h5 class="text-center">Front End Skills </h5>
+                <p class="text-center">HTML</p>
+                <p class="text-center">CSS</p>
+                <p class="text-center">Bootstrap</p>
+                <p class="text-center">JavaScript</p>
+                <p class="text-center">React</p>
+                <p class="text-center">Angularjs</p>
+              </div>
+              <div class=" col-4">
+                <h5 class="text-center">Back End Skills </h5>
+                <p class="text-center">Java</p>
+                <p class="text-center">Node.js</p>
+                <p class="text-center">Spring Framework</p>
+                <p class="text-center">Spring boot</p>
+                <p class="text-center">PHP</p>
+                <p class="text-center">Lavarel</p>
+              </div>
+              <div class=" col-4">
+                <h5 class="text-center">Enterprise </h5>
+                <p class="text-center">Agile</p>
+                <p class="text-center">Maven</p>
+                <p class="text-center">Java</p>
+                <p class="text-center">Python</p>
+              </div>
+            </div>
+          </div>
+          <!-- Modal header
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+         </div>
+         -->
+        </div>
+      </div>
+    </div>
+    <div class = "container-fluid row mx-auto">
+
+      <div class = " scaleUp jumbotron container col-sm-3 bg-secondary text-danger">
+        <img src="images/emmanuelOkoro.jpg" class="d-block rounded-circle img-fluid mx-auto " alt="Emmanuel Okoro's Image" width="145" height="145">
+        <h5 class=" text-center text-white ">  Emmanuel Ndubuisi Okoro  </h5>
+        <h6 class=" text-center "> <code class="text-white">Full Stack Developer </code> </h6>
+        <h6 class=" text-center "><code class="text-white"> B.Eng. & M.Sc. Electrical </code></h6>
+        <h6 class=" text-center "> <code class="text-white">endiesworld@yahoo.com</code> </h6>
+        <h6 class=" text-center "><code class="text-white"> +234-8030628241 </code></h6>
+        <h6 class=" text-center "> <code class="text-white"> endiesworld@gmail.com </code> </h6>
+        <h6 class=" text-center "><code class="text-white"> +234-9024884564 </code></h6>
+      </div>
+
+      <div class="jumbotron d-flex justify-content-center col-sm-8 bg-secondary">
+
+          <div class=" scaleUp d-flex flex-column align-self-center container ">
+            <div class=" align-self-center">
+               <p class=" text-center text-white"> Keep Track of your game record ? sign in below!</p>
+            </div>
+              <div class=" align-self-center container scaleDown ">
+                <!--This is a custom login page for spring boot app. using Thymeleaf as Template.
+                this requires a post method to "/login", which the spring security library identifies,
+              and extract username and password automtically-->
+                <form name="f" class="align-self-center container " th:action="@{/login}" method="POST">
+                  <fieldset>
+                    <div class="scaleDown form-group align-self-center container">
+                      <input  class="form-control mb-2 " id="username" placeholder="enter you email" type="email" name="username" >
+                    </div>  
+                    <div class="scaleDown form-group align-self-center container">  
+                      <input  class="form-control " id="password" placeholder="enter password" type="password" name="password" >
+                    </div>
+                    <div class="form-row holdScale mx-auto" id="groupDiv">
+                      <div class="custom-control mx-auto" id="rememberMeDiv">
+                        <input type="checkbox" class="custom-control-input" id="remeberMeCheck" name="remeberMeCheck">
+                        <label class="custom-control-label text-white" id="remeberMeLabel" for="remeberMeCheck">Remember me</label>
+                      </div>
+                      <div class="col-4 mr-2" id="buttonDiv">
+                        <!--This button type="subimit, which makes it perform the post action automatically"-->
+                        <button type="submit" class="btn setBgColor text-white form-control">sign in</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+                <form name="f" class="align-self-center container secondForm" th:action="@{/https://localhost:8443/signuppage}" method="GET">
+                  <div class="form-group align-self-center scaleDown container" id="divForSecondForm">
+                      <!--This button type="subimit, which makes it perform the post action automatically"-->
+                    <label class="text-center text-white signUpLabel" for="signupButton">Don't have an account yet ?</label>  
+                    <button class="btn setBgColor text-white form-control" id="signupButton">sign up</button>
+                          
+                  </div>
+                </form>  
+              </div>
+            </div>
+
+      </div>
+  </div>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

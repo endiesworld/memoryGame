@@ -1,0 +1,56 @@
+
+ .setBgColor{
+   background-color: #bb86fc88 ;
+ }
+ .scaleUp{
+ width: 70% ;
+ }
+ .navwidth{
+   width: 100 ;
+ }
+
+ .secondForm{
+   position: relative ;
+   top: 10px;
+ }
+.signUpLabel{
+  position: relative ;
+   bottom: -10px;
+  left: 1px ; 
+}
+button:hover  {
+  background-color:  #e886fc9a;
+}
+.signinScaledown{
+width: 90% ;
+}
+
+@media only screen and (max-width: 920px) {
+  .scaleUp{
+  width: 90% ;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .scaleDown{
+  width: 90% ;
+
+  }
+  #groupDiv{
+    padding-right: 10px ;
+    padding-left: 10px ;
+    }
+    .holdScale{
+      width: 90% ;
+      
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+  .navUp{
+  width: 70% ;
+  
+  }
+}

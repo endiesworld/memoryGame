@@ -1,0 +1,29 @@
+.formWidth{
+width: 35% ;
+
+}
+.formHead{
+width: 100% ;
+height: 50px ;
+background-color: #ccc ;
+border-bottom: 10px ;
+display: flex;
+}
+.Name{
+  width: 47% ;
+}
+.formContainer{
+  margin-top: 20px ;
+}
+.input-group-addon{
+  color:#ff0000;
+  background-color: #ffffff;
+}
+.headText{
+  display: inline;
+  padding-left: 15px ;
+  padding-top: 13px ;
+}
+.headImage{
+margin: 5px;
+}
